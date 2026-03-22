@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   * {
@@ -7,7 +9,15 @@
     box-sizing: border-box;
   }
 }
-
+@utility text-16{
+  font-size:16 px;
+  line-height: 24 px;
+}
+@layer utilities{
+  .input-class{
+    @apply text-16;
+  }
+}
 /* Hide scrollbar for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -44,28 +54,15 @@
   background: #7878a3;
 }
 
-/* Top-level @utility blocks*/
-@utility text-10 { @apply text-[10px] leading-[14px]; }
-@utility text-12 { @apply text-[12px] leading-[16px]; }
-@utility text-14 { @apply text-[14px] leading-[20px]; }
-@utility text-16 { @apply text-[16px] leading-[24px]; }
-@utility text-18 { @apply text-[18px] leading-[22px]; }
-@utility text-20 { @apply text-[20px] leading-[24px]; }
-@utility text-24 { @apply text-[24px] leading-[30px]; }
-@utility text-26 { @apply text-[26px] leading-[32px]; }
-@utility text-30 { @apply text-[30px] leading-[38px]; }
-@utility text-36 { @apply text-[36px] leading-[44px]; }
-@utility text14_padding10 { @apply text-14 px-4 py-2.5 font-semibold; }
-@utility flex-center { @apply flex items-center justify-center; }
-
+/* Top-level utility classes*/
 @layer utilities {
 .sheet-content button {
-  @apply !focus:ring-0 !focus-visible:ring-transparent !focus:ring-offset-0 !focus-visible:ring-offset-0 !focus-visible:outline-none !focus-visible:border-none;
+  @apply focus:!ring-0 focus-visible:!ring-transparent !focus:ring-offset-0 !focus-visible:ring-offset-0 !focus-visible:outline-none !focus-visible:border-none;
 }
 
-.right-sidebar {
-  @apply no-scrollbar hidden h-screen max-h-screen flex-col border-l border-gray-200 xl:flex w-[355px] !xl:overflow-y-scroll;
-}
+  .right-sidebar {
+    @apply no-scrollbar hidden h-screen max-h-screen flex-col border-l border-gray-200 xl:flex w-[355px] xl:overflow-y-scroll;
+  }
 
 .payment-transfer_btn {
   @apply text-14 w-full bg-bank-gradient font-semibold text-white !shadow-form;
