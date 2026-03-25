@@ -9,9 +9,35 @@
     box-sizing: border-box;
   }
 }
-@utility text-16{
-  font-size:16 px;
-  line-height: 24 px;
+@layer utilities {
+  .text-12 {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .text-14 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .text-16 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .text-20 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .text-24 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .text-26 {
+    font-size: 26px;
+    line-height: 34px;
+  }
+  .text-30 {
+    font-size: 30px;
+    line-height: 40px;
+  }
 }
 @layer utilities{
   .input-class{
@@ -94,7 +120,11 @@
   }
 
   .total-balance-amount {
-    @apply text-24 lg:text-30 flex-1 font-semibold text-gray-900;
+    font-size: 24px;
+    line-height: 32px;
+    flex: 1 1 0%;
+    font-weight: 600;
+    color: #101828;
   }
 
   .recent-transactions {
@@ -106,7 +136,10 @@
   }
 
   .recent-transactions-label {
-    @apply text-20 md:text-24 font-semibold text-gray-900;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+    color: #101828;
   }
 
   .recent-transactions-tablist {
@@ -135,11 +168,17 @@
   }
 
   .profile-name {
-    @apply text-24 font-semibold text-gray-900;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    color: #101828;
   }
 
   .profile-email {
-    @apply text-16 font-normal text-gray-600;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #475467;
   }
 
   .banks {
@@ -172,11 +211,17 @@
   }
 
   .header-box-title {
-    @apply text-24 lg:text-30 font-semibold text-gray-900;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    color: #101828;
   }
 
   .header-box-subtext {
-    @apply text-14 lg:text-16 font-normal text-gray-600;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #475467;
   }
 
   /* Bank Card */
@@ -217,7 +262,14 @@
 
   /* PlaidLink */
   .plaidlink-primary {
-    @apply text-16 rounded-lg border border-bankGradient bg-bank-gradient font-semibold text-white shadow-form;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 8px;
+    border: 1px solid #0179FE;
+    background: linear-gradient(90deg, #0179FE 0%, #4893FF 100%);
+    font-weight: 600;
+    color: #ffffff;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   }
 
   .plaidlink-ghost {
@@ -243,19 +295,37 @@
   }
 
   .form-label {
-    @apply text-14 w-full max-w-[280px] font-medium text-gray-700;
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+    max-width: 280px;
+    font-weight: 500;
+    color: #344054;
   }
 
   .form-message {
-    @apply text-12 text-red-500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #ef4444;
   }
 
   .form-btn {
-    @apply text-16 rounded-lg border border-bankGradient bg-bank-gradient font-semibold text-white shadow-form;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 8px;
+    border: 1px solid #0179FE;
+    background: linear-gradient(90deg, #0179FE 0%, #4893FF 100%);
+    font-weight: 600;
+    color: #ffffff;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   }
 
   .form-link {
-    @apply text-14 cursor-pointer font-medium text-bankGradient;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #0179FE;
   }
 
   /* Payment Transfer */
@@ -328,7 +398,12 @@
   }
 
   .sidebar-logo {
-    @apply 2xl:text-26 font-ibm-plex-serif text-[26px] font-bold text-black-1 max-xl:hidden;
+    font-size: 26px;
+    line-height: 34px;
+    font-family: var(--font-ibm-plex-serif);
+    font-weight: 700;
+    color: #00214F;
+    display: block;
   }
 
   .sidebar-link {
@@ -336,6 +411,41 @@
   }
 
   .sidebar-label {
-    @apply text-16 font-semibold text-black-2 max-xl:hidden;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #344054;
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .recent-transactions-label {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .total-balance-amount {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .header-box-title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .header-box-subtext {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .sidebar-logo {
+    display: none;
+  }
+  .sidebar-label {
+    display: none;
   }
 }
