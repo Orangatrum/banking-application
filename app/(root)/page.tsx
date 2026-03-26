@@ -1,6 +1,9 @@
 import HeaderBox from '@/components/HeaderBox'
 import TotalBalanceBox from '@/components/TotalBalanceBox'
-
+/*this page is the layout of homepage
+In this tsx file, it will display a greeting to the user as well
+as display their current balance.
+*/
 const Home = () =>{
     const loggedIn = {FirstName: 'Quinton'}
     return(
