@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Arbor Financial",
   description: "Arbor is a banking platform that allows users to freely access, transfer, and manage money",
   icons: {
-    icon: '/icons/logo.png'
+    icon: '/icons/logo1.v2.png'
   }
 };
 

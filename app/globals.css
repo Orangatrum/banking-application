@@ -83,7 +83,7 @@
 /* Top-level utility classes*/
 @layer utilities {
 .sheet-content button {
-  @apply focus:!ring-0 focus-visible:!ring-transparent !focus:ring-offset-0 !focus-visible:ring-offset-0 !focus-visible:outline-none !focus-visible:border-none;
+  @apply focus:ring-0 focus-visible:ring-transparent focus:ring-offset-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-none;
 }
 
   .right-sidebar {
