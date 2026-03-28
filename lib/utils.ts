@@ -2,7 +2,7 @@
 import { type ClassValue, clsx } from "clsx";
 import qs from "query-string";
 import { twMerge } from "tailwind-merge";
-
+import { z } from "zod"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -192,4 +192,20 @@ export const getTransactionStatus = (date: Date) => {
   twoDaysAgo.setDate(today.getDate() - 2);
 
   return date > twoDaysAgo ? "Processing" : "Success";
+  
 };
+export const authFormSchema =(type: string) => z.object({
+  //sign-up
+    firstName:type ==='sign=in' ? z.string().optional() :z.string().min(3, { message: "First name is required." }),
+    lastName:type ==='sign=in' ? z.string().optional(): z.string().min(3, { message: "Last name is required." }),
+    address1:type ==='sign=in' ? z.string().optional(): z.string().min(3, { message: "Address is required." }).max(50),
+    city:type ==='sign=in' ? z.string().optional(): z.string().min(3, { message: "City is required." }).max(50),
+    state:type === 'sign=in' ? z.string().optional():z.string().min(2, { message: "State is required." }).max(2,{message: "State cannot be more than 2 characters"}),
+    postalCode:type ==='sign=in' ? z.string().optional(): z.string().min(3, { message: "Postal code is required." }).max(6,{message: "Postal cannot be more than 6 characters"}),
+    dob:type === 'sign=in' ? z.string().optional():z.string().min(3, { message: "Date of birth is required (yyyy-mm-dd)." }),
+    ssn:type ==='sign=in' ? z.string().optional(): z.string().min(5, { message: "SSN number is required." }),
+    // sign-in/sign-up
+    email: z.string().email({ message: "Invalid email address." }).max(45, {message:"Email cannot be larger than 45 characters"}),
+    password: z.string().min(8, { message: "Password must be at least 6 characters." }).max(50,{message:"Password cannot be larger than 50 characters"}),
+
+});
