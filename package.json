@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@radix-ui/react-visually-hidden": "^1.2.4",
     "autoprefixer": "^10.4.27",
     "chart.js": "^4.5.1",
     "clsx": "^2.1.1",

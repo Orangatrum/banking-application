@@ -14,6 +14,7 @@ import { sidebarLinks } from '@/constants'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { usePathname } from "next/navigation"
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 const MobileNav = ({user}:MobileNavProps) => {
     const pathname = usePathname();
   return (
@@ -24,6 +25,9 @@ const MobileNav = ({user}:MobileNavProps) => {
     height={30} alt="menu" className="cursor-pointer"/>
   </SheetTrigger>
   <SheetContent side="left" className="border-none bg-white">
+    <VisuallyHidden>
+        <SheetTitle>Navigation Menu</SheetTitle>
+    </VisuallyHidden>
     <Link href="/" className="mb-12 cursor-pointer flex items-center gap-2 px-4">
           <Image 
             src="/icons/logo.png" 
